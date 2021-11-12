@@ -11,13 +11,13 @@ index ba1a4b4..75a61db 100644
  
  #	if BYTE_ORDER == LITTLE_ENDIAN
 diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 629035d..d3ab644 100644
+index 252eed2..ed056ba 100644
 --- a/src/CMakeLists.txt
 +++ b/src/CMakeLists.txt
-@@ -16,7 +16,11 @@ SET(LIBCAER_SOURCES
+@@ -15,7 +15,11 @@ SET(LIBCAER_SOURCES
+ 	samsung_evk.c)
  
- # This is often the case due to how we try to have multiple compatible
- # definitions of functions in C.
+ # This is often the case due to how we try to have multiple compatible definitions of functions in C.
 -SET(LIBCAER_COMPILE_OPTIONS "-Wno-unused-function")
 +IF (WIN32)
 +	SET(LIBCAER_COMPILE_OPTIONS "")
@@ -28,7 +28,7 @@ index 629035d..d3ab644 100644
  SET(LIBCAER_LINK_LIBRARIES_PRIVATE PkgConfig::libusb ${BASE_LIBS})
  
 diff --git a/src/davis_rpi.c b/src/davis_rpi.c
-index fa26cd2..7da8576 100644
+index 02d9938..c9292fc 100644
 --- a/src/davis_rpi.c
 +++ b/src/davis_rpi.c
 @@ -1,9 +1,11 @@
