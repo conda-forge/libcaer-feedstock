@@ -3,5 +3,5 @@ __migrator:
   kind: version
   migration_number: 1
 libopencv:
-- 4.5.3
-migrator_ts: 1630697125.1848102
+- 4.5.5
+migrator_ts: 1642005626.2850642
