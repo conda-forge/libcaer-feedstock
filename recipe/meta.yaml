@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://github.com/inivation/{{ name }}/archive/{{ version }}.tar.gz
+  - url: https://gitlab.com/inivation/dv/{{ name }}/-/archive/{{ version }}/libcaer-{{ version }}.tar.gz
     sha256: 768db4aaf426db23a54a59901cc9ce178bcb0235eb846d9f0d0370cc2fc04632
     patches:
       - fix-build.patch
