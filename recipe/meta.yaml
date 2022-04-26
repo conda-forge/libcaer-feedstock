@@ -1,5 +1,5 @@
 {% set name = "libcaer" %}
-{% set version = "3.3.12" %}
+{% set version = "3.3.13" %}
 
 package:
   name: {{ name }}
@@ -7,12 +7,12 @@ package:
 
 source:
   - url: https://gitlab.com/inivation/dv/{{ name }}/-/archive/{{ version }}/libcaer-{{ version }}.tar.gz
-    sha256: 768db4aaf426db23a54a59901cc9ce178bcb0235eb846d9f0d0370cc2fc04632
+    sha256: c9ecaf75b1f2414b917e86ee5d32fd2f9c7ed0f3d6e1dcfb1d5b8ad745897389
     patches:
       - fix-build.patch
 
 build:
-  number: 4
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -37,7 +37,7 @@ test:
 about:
   home: https://github.com/inivation/libcaer/
   license: BSD-2-Clause
-  license_file: COPYING
+  license_file: LICENSE
   summary: Minimal C library to access, configure and get data from neuromorphic sensors and processors.
 
 extra:
