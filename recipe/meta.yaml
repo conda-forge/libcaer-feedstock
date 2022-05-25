@@ -1,5 +1,5 @@
 {% set name = "libcaer" %}
-{% set version = "3.3.13" %}
+{% set version = "3.3.14" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://gitlab.com/inivation/dv/{{ name }}/-/archive/{{ version }}/libcaer-{{ version }}.tar.gz
-    sha256: c9ecaf75b1f2414b917e86ee5d32fd2f9c7ed0f3d6e1dcfb1d5b8ad745897389
+    sha256: 126908506d298ad45ba64753744a69522e0275eeec7e2eeabf826432e4083b06
     patches:
       - fix-build.patch
 
