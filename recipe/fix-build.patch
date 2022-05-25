@@ -15,35 +15,6 @@ index ec6ee5c..5b74b02 100644
  # Basic setup, useful variables, see docs.
  SET(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmakemod ${CMAKE_MODULE_PATH})
  INCLUDE(inivation-setup)
-diff --git a/include/libcaer/portable_endian.h b/include/libcaer/portable_endian.h
-index ba1a4b4..75a61db 100644
---- a/include/libcaer/portable_endian.h
-+++ b/include/libcaer/portable_endian.h
-@@ -56,7 +56,6 @@
- #	define be64toh(x) betoh64(x)
- #	define le64toh(x) letoh64(x)
- #elif defined(__WINDOWS__)
--#	include <sys/param.h>
- #	include <winsock2.h>
- 
- #	if BYTE_ORDER == LITTLE_ENDIAN
-diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
-index 252eed2..ed056ba 100644
---- a/src/CMakeLists.txt
-+++ b/src/CMakeLists.txt
-@@ -15,7 +15,11 @@ SET(LIBCAER_SOURCES
- 	samsung_evk.c)
- 
- # This is often the case due to how we try to have multiple compatible definitions of functions in C.
--SET(LIBCAER_COMPILE_OPTIONS "-Wno-unused-function")
-+IF (WIN32)
-+	SET(LIBCAER_COMPILE_OPTIONS "")
-+ELSE()
-+	SET(LIBCAER_COMPILE_OPTIONS "-Wno-unused-function")
-+ENDIF()
- 
- SET(LIBCAER_LINK_LIBRARIES_PRIVATE PkgConfig::libusb ${BASE_LIBS})
- 
 diff --git a/src/davis_rpi.c b/src/davis_rpi.c
 index 02d9938..53170ea 100644
 --- a/src/davis_rpi.c
