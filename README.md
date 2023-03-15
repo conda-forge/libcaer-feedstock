@@ -1,11 +1,11 @@
-About libcaer
-=============
+About libcaer-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libcaer-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/inivation/libcaer/
 
 Package license: BSD-2-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libcaer-feedstock/blob/main/LICENSE.txt)
 
 Summary: Minimal C library to access, configure and get data from neuromorphic sensors and processors.
 

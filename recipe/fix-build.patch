@@ -15,18 +15,6 @@ index ec6ee5c..5b74b02 100644
  # Basic setup, useful variables, see docs.
  SET(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmakemod ${CMAKE_MODULE_PATH})
  INCLUDE(inivation-setup)
-diff --git a/src/davis_rpi.c b/src/davis_rpi.c
-index 02d9938..53170ea 100644
---- a/src/davis_rpi.c
-+++ b/src/davis_rpi.c
-@@ -4,6 +4,7 @@
- #include <linux/spi/spidev.h>
- #include <linux/types.h>
- #include <sys/ioctl.h>
-+#include <linux/mman.h>
- #include <sys/mman.h>
- #include <unistd.h>
- 
 diff --git a/src/ringbuffer.c b/src/ringbuffer.c
 index 4bd8bbd..3e3a3f1 100644
 --- a/src/ringbuffer.c
