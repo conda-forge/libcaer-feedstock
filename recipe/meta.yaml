@@ -12,18 +12,21 @@ source:
       - fix-build.patch
 
 build:
-  number: 1
-  skip: true  # [win]
+  number: 2
+  skip: true  # [win32]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
 requirements:
   build:
-    - {{ compiler('cxx') }}
-    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}  # [not win]
+    - {{ compiler('c') }}    # [not win]
+    - m2w64-gcc              # [win64]
     - cmake
-    - ninja
-    - pkg-config
+    - ninja                  # [not win]
+    - m2w64-make             # [win64]
+    - pkg-config             # [not win]
+    - m2w64-pkg-config       # [win64]
     - sysroot_linux-64 2.17  # [linux64]
   host:
     - libusb
